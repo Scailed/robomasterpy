@@ -1,23 +1,6 @@
 # RoboMasterPy
 
-**English** | [中文](https://github.com/nanmu42/robomasterpy/blob/master/README.Chinese.md)
 
-[![Documentation Status](https://readthedocs.org/projects/robomasterpy/badge/?version=latest)](https://robomasterpy.nanmu.me/en/latest/)
-[![](https://img.shields.io/pypi/l/robomasterpy.svg)](https://pypi.org/project/robomasterpy/)
-[![](https://img.shields.io/pypi/wheel/robomasterpy.svg)](https://pypi.org/project/robomasterpy/)
-[![](https://img.shields.io/pypi/pyversions/robomasterpy.svg)](https://pypi.org/project/robomasterpy/)
-
-**RoboMasterPy** is a RoboMaster Python SDK and framework:
-
-* Python SDK: inspect and control your Robomaster, remotely;
-* framework: development framework providing and regularising control flow and data flow, resolving common needs like pulling and parsing on video stream, events and pushes, decoupling boilerplate codes like controlling loop, logging, graceful shutdown. You may rely on the framework, implement your business logic with ease of mind and less manual labor.
-
-The SDK(client) is straightforward to use:
-
-```python
->>> import robomasterpy as rm
-
-# IP of RoboMaster is detected under router mode
 >>> cmd = rm.Commander()
 
 # check RoboMaster's API version
