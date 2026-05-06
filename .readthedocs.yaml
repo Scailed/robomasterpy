@@ -5,6 +5,7 @@
 version: 2
 
 # Set the OS, Python version, and other tools you might need
+# TODO: Make this the correct os and python
 build:
   os: ubuntu-24.04
   tools:
