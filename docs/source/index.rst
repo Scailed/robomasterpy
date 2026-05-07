@@ -6,12 +6,17 @@
 robomasterpy documentation
 ==========================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+Hello! and welcome to the documentation of the robomasterpy
+library. 
 
+This library was written to make it easy to send the Robomaster's plaintext SDK commands to the Robomaster via python
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+   :caption: Table of Contents
+
+   Classes
+   EnumsAndConstants
+   Functions
+
 

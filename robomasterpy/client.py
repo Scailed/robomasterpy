@@ -10,63 +10,10 @@
 import logging
 import multiprocessing as mp
 import socket
+from constants import *
 from typing import Optional
 
 from dataclasses import dataclass
-
-CTX = mp.get_context('spawn')
-LOG_LEVEL = logging.DEBUG
-
-VIDEO_PORT: int = 40921
-AUDIO_PORT: int = 40922
-CTRL_PORT: int = 40923
-PUSH_PORT: int = 40924
-EVENT_PORT: int = 40925
-IP_PORT: int = 40926
-
-DEFAULT_BUF_SIZE: int = 512
-
-# switch_enum
-SWITCH_ON: str = 'on'
-SWITCH_OFF: str = 'off'
-
-# mode_enum
-MODE_CHASSIS_LEAD: str = 'chassis_lead'
-MODE_GIMBAL_LEAD: str = 'gimbal_lead'
-MODE_FREE: str = 'free'
-MODE_ENUMS = (MODE_CHASSIS_LEAD, MODE_GIMBAL_LEAD, MODE_FREE)
-
-# armor_event_attr_enum
-ARMOR_HIT: str = 'hit'
-ARMOR_ENUMS = (ARMOR_HIT,)
-
-# sound_event_attr_enum
-SOUND_APPLAUSE: str = 'applause'
-SOUND_ENUMS = (SOUND_APPLAUSE,)
-
-# led_comp_enum
-LED_ALL = 'all'
-LED_TOP_ALL = 'top_all'
-LED_TOP_RIGHT = 'top_right'
-LED_TOP_LEFT = 'top_left'
-LED_BOTTOM_ALL = 'bottom_all'
-LED_BOTTOM_FRONT = 'bottom_front'
-LED_BOTTOM_BACK = 'bottom_back'
-LED_BOTTOM_LEFT = 'bottom_left'
-LED_BOTTOM_RIGHT = 'bottom_right'
-LED_ENUMS = (LED_ALL, LED_TOP_ALL, LED_TOP_RIGHT, LED_TOP_LEFT,
-             LED_BOTTOM_ALL, LED_BOTTOM_FRONT, LED_BOTTOM_BACK,
-             LED_BOTTOM_LEFT, LED_BOTTOM_RIGHT)
-
-# led_effect_enum
-LED_EFFECT_SOLID = 'solid'
-LED_EFFECT_OFF = 'off'
-LED_EFFECT_PULSE = 'pulse'
-LED_EFFECT_BLINK = 'blink'
-LED_EFFECT_SCROLLING = 'scrolling'
-LED_EFFECT_ENUMS = (LED_EFFECT_SOLID, LED_EFFECT_OFF,
-                    LED_EFFECT_PULSE, LED_EFFECT_BLINK,
-                    LED_EFFECT_SCROLLING)
 
 
 @dataclass
@@ -271,6 +218,9 @@ def get_broadcast_ip(timeout: float = None) -> str:
 
 
 class Commander:
+    """
+    A class that contains all of the methods required to communicate with the robomaster - this is the class you'll deal with most often
+    """
     def __init__(self, ip: str = '', timeout: float = 30):
         """
         Create a new commander instance and connect it to Robomaster. This is what you use to control the robomaster when using this library
